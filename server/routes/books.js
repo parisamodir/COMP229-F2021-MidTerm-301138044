@@ -1,7 +1,16 @@
+// File name: books.js
+// Author name: Parisa Modirshahla
+// Student number:301138044
+// Web app name: Favorite book app
+
+
+
+
 // modules required for routing
 let express = require("express");
 let router = express.Router();
 let mongoose = require("mongoose");
+const books = require("../models/books")
 
 // define the book model
 let book = require("../models/books");
@@ -71,7 +80,8 @@ router.post("/:id", (req, res, next) => {
       books.Genre = genre;
       books.save().then(() => {
         res.redirect("/books");
-      });
+      })
+    
     }
   });
 });
